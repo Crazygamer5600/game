@@ -21,17 +21,16 @@ public:
 
 	static const std::map<suit, std::string> suitString;
 
-	int pointVal;
-	suit cardSuit;
-
-	Card(suit suitVal, int pointValue) {
-		pointVal = pointValue;
-		cardSuit = suitVal;
+	Card(suit suitVal, int pointValue) :pointVal(pointValue), cardSuit(suitVal) {
 	};
-	
+
 	virtual void useAbility();
-	
+
 	std::string toString();
+
+private:
+	const int pointVal;
+	const suit cardSuit;
 };
 
 #endif //CARD_H
