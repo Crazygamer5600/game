@@ -5,7 +5,7 @@
 #include <map>
 
 class Card {
-protected:
+public:
 	enum suit
 	{
 		Kraken,
@@ -19,21 +19,18 @@ protected:
 		Cannon,
 	};
 
+	static const std::map<suit, std::string> suitString;
+
+	int pointVal;
 	suit cardSuit;
 
-	std::map<suit, std::string> suitString = { {Kraken, "Kraken"}, 
-		{Mermaid, "Mermaid"}, 
-		{Map, "Map"}, 
-		{Oracle, "Oracle"},
-		{Hook, "Hook"}, 
-		{Sword, "Sword"}, 
-		{Key, "key"}, 
-		{Chest, "Chest"}, 
-		{Cannon, "Cannon" } };
-
-public:
-	const int pointVal;
+	Card(suit suitVal, int pointValue) {
+		pointVal = pointValue;
+		cardSuit = suitVal;
+	};
+	
 	virtual void useAbility();
+	
 	std::string toString();
 };
 
