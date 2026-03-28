@@ -3,5 +3,4 @@
 
 int main() {
 	std::cout << GAME_TITLE;
-	return 0;
 };
