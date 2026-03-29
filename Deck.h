@@ -1,8 +1,9 @@
+#pragma once
 #include <vector>
 #include <memory>
 #include "Card.h"
 
-#pragma once
+
 class Deck {
 public:
 	Deck(int numOfEach) {

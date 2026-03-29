@@ -1,22 +1,23 @@
 #include <string>
 #include <map>
 #include "Card.h"
+#include "Deck.h"
 
-const std::map<Card::suit, std::string> Card::suitString = { {Card::Kraken, "Kraken"},
-	{Card::Mermaid, "Mermaid"},
-	{Card::Map, "Map"},
-	{Card::Oracle, "Oracle"},
-	{Card::Hook, "Hook"},
-	{Card::Sword, "Sword"},
-	{Card::Key, "key"},
-	{Card::Chest, "Chest"},
-	{Card::Cannon, "Cannon" } 
+const std::map<Card::suit, std::string> Card::suitString = { {Card::kraken, "Kraken"},
+	{Card::mermaid, "Mermaid"},
+	{Card::map, "Map"},
+	{Card::oracle, "Oracle"},
+	{Card::hook, "Hook"},
+	{Card::sword, "Sword"},
+	{Card::key, "key"},
+	{Card::chest, "Chest"},
+	{Card::cannon, "Cannon" } 
 };
 
 std::string Card::toString() {
-	return "Suit:" + Card::suitString.at(cardSuit) + ", value:" + std::to_string(Card::pointVal);
+	return "value:" + std::to_string(Card::pointVal);
 }
 
-void Card::useAbility() {
+void Card::useAbility(Deck* targetDeck) {
 	this->toString();
 }

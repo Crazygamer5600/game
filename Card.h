@@ -3,36 +3,36 @@
 
 #include <string>
 #include <map>
+class Deck;
 
 class Card {
 public:
 	enum suit
 	{
-		Kraken,
-		Mermaid,
-		Map,
-		Oracle,
-		Hook,
-		Sword,
-		Key,
-		Chest,
-		Cannon,
+		kraken,
+		mermaid,
+		map,
+		oracle,
+		hook,
+		sword,
+		key,
+		chest,
+		cannon,
 	};
 
 	static const std::map<suit, std::string> suitString;
 
-	Card(suit suitVal, int pointValue) :pointVal(pointValue), cardSuit(suitVal) {
+	Card(int pointValue) :pointVal(pointValue) {
 	};
 
-	virtual void useAbility() = 0;
+	virtual void useAbility(Deck* targetDeck) = 0;
 
-	std::string toString();
+	virtual std::string toString();
 
 	virtual ~Card() = default;
 
-private:
+protected:
 	const int pointVal;
-	const suit cardSuit;
 };
 
 #endif //CARD_H
