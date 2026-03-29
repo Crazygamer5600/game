@@ -3,7 +3,6 @@
 
 #include <string>
 #include <map>
-#include "Deck.h"
 
 class Card {
 public:
@@ -34,7 +33,6 @@ public:
 private:
 	const int pointVal;
 	const suit cardSuit;
-	Deck* currDeck;
 };
 
 #endif //CARD_H

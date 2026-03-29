@@ -1,4 +1,5 @@
 #include <vector>
+#include <memory>
 #include "Card.h"
 
 #pragma once
@@ -15,5 +16,6 @@ public:
 
 private:
 	int QtyPerSuit;
-	std::vector<Card*> cardSet;
+
+	std::vector<std::unique_ptr<Card>> cardSet;
 };
