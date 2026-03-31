@@ -7,14 +7,14 @@
 class Deck {
 public:
 	Deck(int numOfEach) {
-		QtyPerSuit = numOfEach;
-		this->makeDeck();
+		this->makeDeck(numOfEach);
 	}
 
-	void makeDeck();
+	void makeDeck(int qtyOfEach);
+
+	void addToDeck(Card* cardPtr);
 
 private:
-	int QtyPerSuit;
 
 	std::vector<std::unique_ptr<Card>> cardSet;
 };
