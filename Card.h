@@ -31,6 +31,8 @@ public:
 
 	virtual ~Card() = default;
 
+	int getPointVal();
+
 protected:
 	const int pointVal;
 };

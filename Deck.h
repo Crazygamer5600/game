@@ -11,9 +11,7 @@ public:
 		this->makeDeck();
 	}
 
-	void makeDeck() {
-		
-	}
+	void makeDeck();
 
 private:
 	int QtyPerSuit;

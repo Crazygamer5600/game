@@ -21,3 +21,7 @@ std::string Card::toString() {
 void Card::useAbility(Deck* targetDeck) {
 	this->toString();
 }
+
+int Card::getPointVal(){
+	return Card::pointVal;
+}
