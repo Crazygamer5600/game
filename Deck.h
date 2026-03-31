@@ -16,6 +16,8 @@ public:
 
 	void addToDeck(Card* cardPtr);
 
+	void shuffleDeck();
+
 private:
 
 	std::vector<std::unique_ptr<Card>> cardSet;

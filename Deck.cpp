@@ -1,6 +1,10 @@
 #include <list>
 #include <cstdlib>
 #include <iostream>
+#include <algorithm>
+#include <iterator>
+#include <random>
+#include <vector>
 #include "Deck.h"
 #include "Cannon.h"
 #include "Card.h"
@@ -75,4 +79,10 @@ void Deck::showDeckContents() {
 	for (auto& card : cardSet) {
 		std::cout << card->toString() << "\n";
 	}
+}
+
+void Deck::shuffleDeck() {
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::shuffle(this->cardSet.begin(), this->cardSet.end(), g);
 }
