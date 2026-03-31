@@ -12,6 +12,8 @@ public:
 
 	void makeDeck(int qtyOfEach);
 
+	void showDeckContents();
+
 	void addToDeck(Card* cardPtr);
 
 private:
