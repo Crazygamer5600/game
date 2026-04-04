@@ -24,3 +24,5 @@ int main() {
 	draw.showDeckContents();
 
 };
+
+//todo: impliment the chest, key,  and their abilities, then implement the game loop and win conditions.

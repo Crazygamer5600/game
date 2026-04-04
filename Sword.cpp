@@ -2,7 +2,7 @@
 #include <iostream>
 
 void Sword::useAbility(Deck* enemyBank, Deck* playArea) {
-	std::cout << "hi";
+	playArea->addToDeck(enemyBank->getHighestCard());
 }
 
 std::string Sword::toString() {

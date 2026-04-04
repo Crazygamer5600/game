@@ -2,7 +2,7 @@
 #include <iostream>
 
 void Hook::useAbility(Deck* myBank, Deck* playArea) {
-	return;
+	playArea->addToDeck(myBank->getHighestCard());
 }
 
 std::string Hook::toString() {
