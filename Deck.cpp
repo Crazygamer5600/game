@@ -19,8 +19,8 @@
 
 using namespace std;
 
-void Deck::addToDeck(Card* cardPtr) {
-	cardSet.insert(cardSet.begin() + 0, std::unique_ptr<Card>(cardPtr));
+void Deck::addToDeck(std::unique_ptr<Card> cardPtr) {
+	cardSet.insert(cardSet.begin(), std::move(cardPtr));
 }
 
 void Deck::makeDeck(int qtyOfEach) {
@@ -30,47 +30,49 @@ void Deck::makeDeck(int qtyOfEach) {
 
 	std::vector<int> normalVals = { 2,3,4,5,6,7 };
 	int val;
+	std::unique_ptr<Card> card;
 
 	for (int x = 0; x<9; x++) {
 		for (int i = 0; i < qtyOfEach; i++) {
 			switch (x) {
 				case 0:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Cannon(val));
+					card = std::make_unique<Cannon>(val);
 					break;
 				case 1:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Chest(val));
+					card = std::make_unique<Chest>(val);
 					break;
 				case 2:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Key(val));
+					card = std::make_unique<Key>(val);
 					break;
 				case 3:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Sword(val));
+					card = std::make_unique<Sword>(val);
 					break;
 				case 4:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Hook(val));
+					card = std::make_unique<Hook>(val);
 					break;
 				case 5:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Oracle(val));
+					card = std::make_unique<Oracle>(val);
 					break;
 				case 6:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Map(val));
+					card = std::make_unique<Map>(val);
 					break;
 				case 7:
 					val = 2 + normalVals[i % normalVals.size()];
-					this->addToDeck(new Mermaid(val));
+					card = std::make_unique<Mermaid>(val);
 					break;
 				case 8:
 					val = normalVals[i % normalVals.size()];
-					this->addToDeck(new Kraken(val));
+					card = std::make_unique<Kraken>(val);
 					break;
 			}
+			this->addToDeck(std::move(card));
 		}
 	}
 }
@@ -87,19 +89,20 @@ void Deck::shuffleDeck() {
 	std::shuffle(this->cardSet.begin(), this->cardSet.end(), g);
 }
 
-Card* Deck::getHighestCard() {
+std::unique_ptr<Card> Deck::getHighestCard() {
 
 	if (this->cardSet.empty()) {
 		return nullptr;
 	}
 
-	Card* largestCard = this->cardSet.at(0).get();
-
-	for (auto& card : this->cardSet) {
-		if (card->getPointVal() > largestCard->getPointVal()) {
-			largestCard = card.get();
+	size_t highestIndex = 0;
+	for (size_t i = 1; i < cardSet.size(); ++i) {
+		if (cardSet[i]->getPointVal() > cardSet[highestIndex]->getPointVal()) {
+			highestIndex = i;
 		}
 	}
-
+	
+	std::unique_ptr<Card> largestCard = std::move(cardSet[highestIndex]);
+	cardSet.erase(cardSet.begin() + highestIndex);
 	return largestCard;
 }

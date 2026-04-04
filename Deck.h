@@ -13,11 +13,11 @@ public:
 
 	void showDeckContents();
 
-	void addToDeck(Card* cardPtr);
+	void addToDeck(std::unique_ptr<Card> cardPtr);
 
 	void shuffleDeck();
 
-	Card* getHighestCard();
+	std::unique_ptr<Card> getHighestCard();
 
 private:
 
