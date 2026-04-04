@@ -76,7 +76,7 @@ void Deck::makeDeck(int qtyOfEach) {
 }
 
 void Deck::showDeckContents() {
-	for (auto& card : cardSet) {
+	for (auto& card : this->cardSet) {
 		std::cout << card->toString() << "\n";
 	}
 }
@@ -85,4 +85,21 @@ void Deck::shuffleDeck() {
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(this->cardSet.begin(), this->cardSet.end(), g);
+}
+
+Card* Deck::getHighestCard() {
+
+	if (this->cardSet.empty()) {
+		return nullptr;
+	}
+
+	Card* largestCard = this->cardSet.at(0).get();
+
+	for (auto& card : this->cardSet) {
+		if (card->getPointVal() > largestCard->getPointVal()) {
+			largestCard = card.get();
+		}
+	}
+
+	return largestCard;
 }

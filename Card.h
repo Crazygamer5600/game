@@ -25,7 +25,7 @@ public:
 	Card(int pointValue) :pointVal(pointValue) {
 	};
 
-	virtual void useAbility(Deck* targetDeck) = 0;
+	virtual void useAbility(Deck* targetDeck1, Deck* targetDeck2) = 0;
 
 	virtual std::string toString();
 

@@ -1,7 +1,7 @@
 #include "Oracle.h"
 #include <iostream>
 
-void Oracle::useAbility(Deck* enemyBank) {
+void Oracle::useAbility(Deck* enemyBank, Deck* blankPointer) {
 	std::cout << "hi";
 }
 

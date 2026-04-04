@@ -5,7 +5,7 @@
 
 int main() {
 	std::cout << GAME_TITLE;
-	Deck draw(6);
+	Deck draw(1);
 	draw.showDeckContents();
 	draw.shuffleDeck();
 	draw.showDeckContents();

@@ -6,7 +6,7 @@ class Map : public Card {
 public:
 	using Card::Card;
 
-	void useAbility(Deck* enemyBank) override;
+	void useAbility(Deck* playArea, Deck* discardPile) override;
 
 	std::string toString() override;
 

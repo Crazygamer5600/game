@@ -9,7 +9,6 @@ public:
 	Deck(int numOfEach) {
 		this->makeDeck(numOfEach);
 	}
-
 	void makeDeck(int qtyOfEach);
 
 	void showDeckContents();
@@ -17,6 +16,8 @@ public:
 	void addToDeck(Card* cardPtr);
 
 	void shuffleDeck();
+
+	Card* getHighestCard();
 
 private:
 

@@ -1,8 +1,8 @@
 #include "Cannon.h"
 #include <iostream>
 
-void Cannon::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Cannon::useAbility(Deck* enemyBank, Deck* discardPile) {
+	discardPile->addToDeck(enemyBank->getHighestCard());
 }
 
 std::string Cannon::toString() {

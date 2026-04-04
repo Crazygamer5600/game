@@ -6,7 +6,7 @@ class Chest : public Card {
 public:
 	using Card::Card;
 
-	void useAbility(Deck* enemyBank) override;
+	void useAbility(Deck* myBank, Deck* discardPile) override;
 
 	std::string toString() override;
 

@@ -1,7 +1,7 @@
 #include "Sword.h"
 #include <iostream>
 
-void Sword::useAbility(Deck* enemyBank) {
+void Sword::useAbility(Deck* enemyBank, Deck* playArea) {
 	std::cout << "hi";
 }
 

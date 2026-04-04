@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>280</y>
+      <x>742</x>
+      <y>161</y>
       <w>147</w>
       <h>35</h>
     </coordinates>
@@ -20,21 +20,23 @@ vector &lt;*Card&gt; Cardset
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>763</x>
-      <y>280</y>
+      <x>987</x>
+      <y>161</y>
       <w>147</w>
-      <h>42</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>game
 --
-main()</panel_attributes>
+main()
+Decks discard
+Decks draw</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>343</y>
+      <x>742</x>
+      <y>224</y>
       <w>147</w>
       <h>77</h>
     </coordinates>
@@ -49,8 +51,8 @@ toString()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>91</x>
-      <y>476</y>
+      <x>315</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -64,8 +66,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>203</x>
-      <y>476</y>
+      <x>427</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -79,8 +81,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>476</y>
+      <x>539</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -94,8 +96,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>427</x>
-      <y>476</y>
+      <x>651</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -109,8 +111,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>539</x>
-      <y>476</y>
+      <x>763</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -124,8 +126,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>651</x>
-      <y>476</y>
+      <x>875</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -139,8 +141,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>763</x>
-      <y>476</y>
+      <x>987</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -154,8 +156,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>875</x>
-      <y>476</y>
+      <x>1099</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -169,8 +171,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>987</x>
-      <y>476</y>
+      <x>1211</x>
+      <y>357</y>
       <w>98</w>
       <h>70</h>
     </coordinates>
@@ -184,8 +186,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>406</y>
+      <x>693</x>
+      <y>287</y>
       <w>63</w>
       <h>84</h>
     </coordinates>
@@ -195,8 +197,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>357</x>
-      <y>392</y>
+      <x>581</x>
+      <y>273</y>
       <w>175</w>
       <h>98</h>
     </coordinates>
@@ -206,8 +208,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>378</y>
+      <x>476</x>
+      <y>259</y>
       <w>280</w>
       <h>112</h>
     </coordinates>
@@ -217,8 +219,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>140</x>
-      <y>364</y>
+      <x>364</x>
+      <y>245</y>
       <w>392</w>
       <h>126</h>
     </coordinates>
@@ -228,8 +230,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>406</y>
+      <x>882</x>
+      <y>287</y>
       <w>56</w>
       <h>84</h>
     </coordinates>
@@ -239,8 +241,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>392</y>
+      <x>882</x>
+      <y>273</y>
       <w>168</w>
       <h>98</h>
     </coordinates>
@@ -250,8 +252,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>378</y>
+      <x>882</x>
+      <y>259</y>
       <w>280</w>
       <h>112</h>
     </coordinates>
@@ -261,8 +263,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>364</y>
+      <x>882</x>
+      <y>245</y>
       <w>399</w>
       <h>126</h>
     </coordinates>
@@ -272,8 +274,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>413</y>
+      <x>805</x>
+      <y>294</y>
       <w>21</w>
       <h>77</h>
     </coordinates>
@@ -283,8 +285,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>308</y>
+      <x>805</x>
+      <y>189</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -294,8 +296,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>658</x>
-      <y>287</y>
+      <x>882</x>
+      <y>168</y>
       <w>119</w>
       <h>21</h>
     </coordinates>
@@ -305,8 +307,8 @@ useAbility(DecksPtr):</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>308</x>
-      <y>847</y>
+      <x>532</x>
+      <y>728</y>
       <w>147</w>
       <h>56</h>
     </coordinates>
@@ -320,8 +322,8 @@ useAbility():</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>798</y>
+      <x>791</x>
+      <y>679</y>
       <w>147</w>
       <h>140</h>
     </coordinates>
@@ -342,8 +344,8 @@ kraken()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>21</x>
-      <y>833</y>
+      <x>245</x>
+      <y>714</y>
       <w>147</w>
       <h>91</h>
     </coordinates>
@@ -360,8 +362,8 @@ list &lt;Card&gt; Player2Bank
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>21</x>
-      <y>994</y>
+      <x>245</x>
+      <y>875</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -373,8 +375,8 @@ main()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>448</x>
-      <y>854</y>
+      <x>672</x>
+      <y>735</y>
       <w>133</w>
       <h>35</h>
     </coordinates>
@@ -387,8 +389,8 @@ uses &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>161</x>
-      <y>861</y>
+      <x>385</x>
+      <y>742</y>
       <w>161</w>
       <h>35</h>
     </coordinates>
@@ -401,8 +403,8 @@ contains &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>84</x>
-      <y>917</y>
+      <x>308</x>
+      <y>798</y>
       <w>28</w>
       <h>91</h>
     </coordinates>
@@ -415,8 +417,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>826</x>
-      <y>196</y>
+      <x>1050</x>
+      <y>77</y>
       <w>28</w>
       <h>98</h>
     </coordinates>
@@ -428,8 +430,8 @@ m2=2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>763</x>
-      <y>119</y>
+      <x>987</x>
+      <y>0</y>
       <w>147</w>
       <h>84</h>
     </coordinates>
@@ -445,8 +447,8 @@ PlayAreaToString()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>938</x>
-      <y>273</y>
+      <x>1162</x>
+      <y>154</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -458,8 +460,8 @@ GAME_TITLE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>903</x>
-      <y>294</y>
+      <x>1127</x>
+      <y>175</y>
       <w>49</w>
       <h>21</h>
     </coordinates>
@@ -469,8 +471,8 @@ GAME_TITLE</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>581</x>
-      <y>147</y>
+      <x>805</x>
+      <y>28</y>
       <w>196</w>
       <h>147</h>
     </coordinates>

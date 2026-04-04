@@ -1,8 +1,8 @@
 #include "Key.h"
 #include <iostream>
 
-void Key::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Key::useAbility(Deck* emptyPtr1, Deck* emptyPtr2) {
+	return;
 }
 
 std::string Key::toString() {

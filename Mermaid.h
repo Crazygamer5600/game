@@ -6,7 +6,7 @@ class Mermaid : public Card {
 public:
 	using Card::Card;
 
-	void useAbility(Deck* enemyBank) override;
+	void useAbility(Deck* blankPointer1, Deck* blankPointer2) override;
 
 	std::string toString() override;
 

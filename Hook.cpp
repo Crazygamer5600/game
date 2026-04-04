@@ -1,8 +1,8 @@
 #include "Hook.h"
 #include <iostream>
 
-void Hook::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Hook::useAbility(Deck* myBank, Deck* playArea) {
+	return;
 }
 
 std::string Hook::toString() {

@@ -1,8 +1,8 @@
 #include "Map.h"
 #include <iostream>
 
-void Map::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Map::useAbility(Deck* playArea, Deck* discardPile) {
+	return;
 }
 
 std::string Map::toString() {

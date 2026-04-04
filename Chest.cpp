@@ -1,7 +1,7 @@
 #include "Chest.h"
 #include <iostream>
 
-void Chest::useAbility(Deck* enemyBank) {
+void Chest::useAbility(Deck* myBank, Deck* discardPile) {
 	std::cout << "hi";
 }
 

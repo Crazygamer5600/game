@@ -1,8 +1,8 @@
 #include "Mermaid.h"
 #include <iostream>
 
-void Mermaid::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Mermaid::useAbility(Deck* blankPointer1, Deck* blankPointer2) {
+	return;
 }
 
 std::string Mermaid::toString() {

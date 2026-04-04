@@ -1,8 +1,8 @@
 #include "Kraken.h"
 #include <iostream>
 
-void Kraken::useAbility(Deck* enemyBank) {
-	std::cout << "hi";
+void Kraken::useAbility(Deck* playArea, Deck* discardPile) {
+	return;
 }
 
 std::string Kraken::toString() {

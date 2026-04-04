@@ -18,7 +18,7 @@ std::string Card::toString() {
 	return "value:" + std::to_string(Card::pointVal);
 }
 
-void Card::useAbility(Deck* targetDeck) {
+void Card::useAbility(Deck* targetDeck1, Deck* targetDeck2) {
 	this->toString();
 }
 

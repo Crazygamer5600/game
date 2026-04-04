@@ -6,7 +6,7 @@ class Oracle : public Card {
 public:
 	using Card::Card;
 
-	void useAbility(Deck* enemyBank) override;
+	void useAbility(Deck* drawPile, Deck* blankPointer) override;
 
 	std::string toString() override;
 
