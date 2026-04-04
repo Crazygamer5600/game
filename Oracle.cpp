@@ -1,8 +1,8 @@
 #include "Oracle.h"
 #include <iostream>
 
-void Oracle::useAbility(Deck* enemyBank, Deck* blankPointer) {
-	std::cout << "hi";
+void Oracle::useAbility(Deck* playDeck, Deck* blankPointer) {
+	playDeck->showWithinRange(1);
 }
 
 std::string Oracle::toString() {

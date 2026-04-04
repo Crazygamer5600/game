@@ -83,6 +83,17 @@ void Deck::showDeckContents() {
 	}
 }
 
+void Deck::showWithinRange(int range) {
+	int i = 0;
+	for (auto& card : this->cardSet) {
+		if (i >= range) {
+			break;
+		}
+		std::cout << card->toString() << "\n";
+		i++;
+	}
+}
+
 void Deck::shuffleDeck() {
 	std::random_device rd;
 	std::mt19937 g(rd());

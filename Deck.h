@@ -17,6 +17,8 @@ public:
 
 	void shuffleDeck();
 
+	void showWithinRange(int range);
+
 	std::unique_ptr<Card> getHighestCard();
 
 private:
