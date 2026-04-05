@@ -21,7 +21,14 @@ public:
 
 	std::unique_ptr<Card> getHighestCard();
 
-private:
+	void draw(Deck& depositDeck);
 
+	void moveEntireDeck(Deck& targetDeck);
+
+	bool suitSearch(Card::suit suitToFind);
+
+	std::vector<Card*> lastPlayed;
+
+private:
 	std::vector<std::unique_ptr<Card>> cardSet;
 };

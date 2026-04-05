@@ -8,3 +8,7 @@ void Key::useAbility(Deck* emptyPtr1, Deck* emptyPtr2) {
 std::string Key::toString() {
 	return suitString.at(keySuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Key::getSuit() {
+	return keySuit;
+}

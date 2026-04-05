@@ -8,3 +8,7 @@ void Cannon::useAbility(Deck* enemyBank, Deck* discardPile) {
 std::string Cannon::toString() {
 	return suitString.at(cannonSuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Cannon::getSuit() {
+	return cannonSuit;
+}

@@ -10,6 +10,8 @@ public:
 
 	std::string toString() override;
 
+	Card::suit getSuit() override;
+
 private:
 	suit hookSuit = Card::hook;
 };

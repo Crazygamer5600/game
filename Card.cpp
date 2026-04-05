@@ -25,3 +25,4 @@ void Card::useAbility(Deck* targetDeck1, Deck* targetDeck2) {
 int Card::getPointVal(){
 	return Card::pointVal;
 }
+

@@ -33,6 +33,8 @@ public:
 
 	int getPointVal();
 
+	virtual Card::suit getSuit() = 0;
+
 protected:
 	const int pointVal;
 };

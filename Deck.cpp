@@ -117,3 +117,35 @@ std::unique_ptr<Card> Deck::getHighestCard() {
 	cardSet.erase(cardSet.begin() + highestIndex);
 	return largestCard;
 }
+
+void Deck::draw(Deck& depositDeck) {
+	if (this->cardSet.empty()) {
+		return;
+	} 
+
+	depositDeck.lastPlayed.clear();
+	depositDeck.lastPlayed.push_back(this->cardSet.front().get());
+
+	depositDeck.addToDeck(std::move(this->cardSet.front()));
+	this->cardSet.erase(this->cardSet.begin());
+}
+
+void Deck::moveEntireDeck(Deck& targetDeck) {
+	targetDeck.lastPlayed.clear();
+
+	for (auto& card : this->cardSet) {
+		targetDeck.lastPlayed.push_back(card.get());
+		targetDeck.addToDeck(std::move(card));
+	}
+
+	this->cardSet.clear();
+}
+
+bool Deck::suitSearch(Card::suit suitToFind) {
+	for (const auto& card : cardSet) {
+		if (card->getSuit() == suitToFind) {
+			return true;
+		}
+	}
+	return false;
+}

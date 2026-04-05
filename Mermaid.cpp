@@ -8,3 +8,7 @@ void Mermaid::useAbility(Deck* blankPointer1, Deck* blankPointer2) {
 std::string Mermaid::toString() {
 	return suitString.at(mermaidSuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Mermaid::getSuit() {
+	return mermaidSuit;
+}

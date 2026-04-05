@@ -8,3 +8,7 @@ void Sword::useAbility(Deck* enemyBank, Deck* playArea) {
 std::string Sword::toString() {
 	return suitString.at(swordSuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Sword::getSuit() {
+	return swordSuit;
+}

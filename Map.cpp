@@ -8,3 +8,7 @@ void Map::useAbility(Deck* playArea, Deck* discardPile) {
 std::string Map::toString() {
 	return suitString.at(mapSuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Map::getSuit() {
+	return mapSuit;
+}

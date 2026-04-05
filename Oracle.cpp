@@ -8,3 +8,7 @@ void Oracle::useAbility(Deck* playDeck, Deck* blankPointer) {
 std::string Oracle::toString() {
 	return suitString.at(oracleSuit) + " value:" + std::to_string(pointVal);
 }
+
+Card::suit Oracle::getSuit() {
+	return oracleSuit;
+}

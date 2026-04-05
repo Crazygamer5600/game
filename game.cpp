@@ -40,4 +40,4 @@ int main() {
 
 };
 
-//todo: impliment the chest, oracle, map, kraken and their abilities, then implement the game loop and win conditions.
+//todo: impliment the chest, map, kraken and their abilities, then implement the game loop and win conditions.
