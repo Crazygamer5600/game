@@ -33,6 +33,8 @@ public:
 
 	bool isEmpty() const;
 
+	int sumHighestPerSuit();
+
 	std::vector<Card*> lastPlayed;
 
 private:

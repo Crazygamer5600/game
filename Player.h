@@ -11,4 +11,6 @@ public:
 
 	std::string name;
 
+	int getScore();
+
 };

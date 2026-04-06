@@ -172,3 +172,14 @@ void Deck::showLastPlayed() {
 		std::cout << i << ": " << lastPlayed[i]->toString() << "\n";
 	}
 }
+
+int Deck::sumHighestPerSuit() {
+	std::map<Card::suit, int> highest;
+	for (const auto& card : this->cardSet) {
+		if (card->getPointVal() > highest[card->getSuit()])
+			highest[card->getSuit()] = card->getPointVal();
+	}
+	int score = 0;
+	for (const auto& pair : highest) score += pair.second;
+	return score;
+}
