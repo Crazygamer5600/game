@@ -128,10 +128,14 @@
     <ClCompile Include="Card.h" />
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Deck.cpp" />
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="game.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Hook.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="Kraken.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Mermaid.cpp" />
     <ClCompile Include="Oracle.cpp" />
@@ -142,6 +146,7 @@
     <ClInclude Include="Cannon.h" />
     <ClInclude Include="Chest.h" />
     <ClInclude Include="Deck.h" />
+    <ClInclude Include="game.h" />
     <ClInclude Include="game_title.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="Key.h" />

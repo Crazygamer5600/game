@@ -1,39 +1,25 @@
 #include <iostream>
-#include "game_title.h"
-#include "Deck.h"
-#include "Cannon.h"
-#include "Card.h"
-#include "Chest.h"
-#include "Hook.h"
-#include "Key.h"
-#include "Kraken.h"
-#include "Map.h"
-#include "Mermaid.h"
-#include "Oracle.h"
-#include "Sword.h"
+#include "game.h"
 
+void Game::draw() {
+	Player* currPlayer = &player1;
+	if (!isPlayer1Turn) {
+		currPlayer = &player2;
+	}
+	drawPile.draw(currPlayer->playArea);
+	this->cardAbilityHelper(currPlayer->playArea.lastPlayed.back()->getSuit());
+}
 
-int main() {
-	std::cout << GAME_TITLE;
-	Deck bank(0);
-	Deck discardPile(2);
-	Deck playArea(7);
+void Game::cardAbilityHelper(Card::suit suit) {
+	Player* currPlayer = &player1;
+	Player* enemyPlayer = &player2;
+	if (!isPlayer1Turn) {
+		currPlayer = &player2;
+		enemyPlayer = &player1;
+	}
+	
+	if (suit == Card::suit::cannon) {
+		
+	}
+}
 
-	playArea.showDeckContents();
-	std::cout << "\n";
-
-
-	playArea.moveEntireDeck(bank);
-
-	bank.showDeckContents();
-
-	Chest chestCard(5);
-	chestCard.useAbility(&bank, &discardPile);
-
-	std::cout << "\n";
-
-	bank.showDeckContents();
-
-};
-
-//todo: impliment the map, kraken and their abilities, then implement the game loop and win conditions.
