@@ -27,5 +27,5 @@ public:
 	bool isPlayer1Turn = true;
 
 	void draw();
-	void cardAbilityHelper(Card::suit suit);
+	void cardAbilityHelper(Card* card);
 };
