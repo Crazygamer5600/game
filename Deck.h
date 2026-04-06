@@ -29,6 +29,10 @@ public:
 
 	bool suitSearch(Card::suit suitToFind);
 
+	void showLastPlayed();
+
+	bool isEmpty() const;
+
 	std::vector<Card*> lastPlayed;
 
 private:

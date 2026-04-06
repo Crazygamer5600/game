@@ -20,6 +20,9 @@
 using namespace std;
 
 void Deck::addToDeck(std::unique_ptr<Card> cardPtr) {
+	if (!cardPtr) {
+		return;
+	} 
 	cardSet.insert(cardSet.begin(), std::move(cardPtr));
 }
 
@@ -158,4 +161,14 @@ std::unique_ptr<Card> Deck::getTopCard() {
 	std::unique_ptr<Card> topCard = std::move(cardSet.front());
 	cardSet.erase(cardSet.begin());
 	return topCard;
+}
+
+bool Deck::isEmpty() const {
+	return cardSet.empty();
+}
+
+void Deck::showLastPlayed() {
+	for (int i = 0; i < lastPlayed.size(); i++) {
+		std::cout << i << ": " << lastPlayed[i]->toString() << "\n";
+	}
 }

@@ -2,7 +2,13 @@
 #include <iostream>
 
 void Map::useAbility(Deck* playArea, Deck* discardPile) {
-	return;
+    for (int i = 0; i < 3; i++) {
+        if (discardPile->isEmpty()) {
+            std::cout << "No cards left in the discard pile.\n";
+            break;
+        }
+        discardPile->draw(*playArea);
+    }
 }
 
 std::string Map::toString() {

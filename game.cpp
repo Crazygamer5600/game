@@ -15,39 +15,25 @@
 
 int main() {
 	std::cout << GAME_TITLE;
-	Deck draw(14);
-	draw.showDeckContents();
-	draw.shuffleDeck();
+	Deck bank(0);
+	Deck discardPile(2);
+	Deck playArea(7);
 
-	std::cout << "\n";
-	draw.showDeckContents();
-
-	Deck emptyMove(0);
-
-	Cannon testCannon(5);
-	testCannon.useAbility(&draw, &emptyMove);
-
-	std::cout << "\n";
-	emptyMove.showDeckContents();
-	
-	std::cout << "\n";
-	draw.showDeckContents();
-	
+	playArea.showDeckContents();
 	std::cout << "\n";
 
-	Oracle testOracle(6);
-	testOracle.useAbility(&draw, nullptr);
 
-	Chest testChest(4);
-	testChest.useAbility(&draw, &emptyMove);
+	playArea.moveEntireDeck(bank);
+
+	bank.showDeckContents();
+
+	Chest chestCard(5);
+	chestCard.useAbility(&bank, &discardPile);
 
 	std::cout << "\n";
-	emptyMove.showDeckContents();
 
-	std::cout << "\n";
-	draw.showDeckContents();
-
+	bank.showDeckContents();
 
 };
 
-//todo: impliment the chest, map, kraken and their abilities, then implement the game loop and win conditions.
+//todo: impliment the map, kraken and their abilities, then implement the game loop and win conditions.
