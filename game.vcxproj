@@ -128,7 +128,7 @@
     <ClCompile Include="Card.h" />
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Deck.cpp" />
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="Game.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
       </ExcludedFromBuild>
     </ClCompile>
@@ -146,7 +146,7 @@
     <ClInclude Include="Cannon.h" />
     <ClInclude Include="Chest.h" />
     <ClInclude Include="Deck.h" />
-    <ClInclude Include="game.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="game_title.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="Key.h" />
