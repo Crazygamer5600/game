@@ -37,8 +37,8 @@ public:
 
 	bool isBust();
 
-	std::vector<Card*> lastPlayed;
+	std::vector<std::unique_ptr<Card>> getCardSet();
 
-private:
+	std::vector<Card*> lastPlayed;
 	std::vector<std::unique_ptr<Card>> cardSet;
 };

@@ -70,6 +70,11 @@ void Game::cardAbilityHelper(Card* card) {
 		break;
 	case Card::kraken:
 		card->useAbility(&currPlayer->playArea, &drawPile);
+		for (int i = 0; i < 3; i++) {
+			if (currPlayer->playArea.cardSet.at(i)->getSuit() != Card::kraken) {
+				cardAbilityHelper(currPlayer->playArea.cardSet.at(i).get());
+			}
+		}
 		break;
 
 	}
