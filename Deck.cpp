@@ -183,3 +183,14 @@ int Deck::sumHighestPerSuit() {
 	for (const auto& pair : highest) score += pair.second;
 	return score;
 }
+
+bool Deck::isBust() {
+	for (int i = 0; i < cardSet.size(); i++) {
+		for (int j = i + 1; j < cardSet.size(); j++) {
+			if (cardSet[i]->getSuit() == cardSet[j]->getSuit()) {
+				return true;
+			}
+		}
+	}
+	return false;
+}

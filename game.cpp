@@ -19,15 +19,19 @@ bool Game::draw() {
 		currPlayer = &player2;
 	}
 	drawPile.draw(currPlayer->playArea);
-	std::unique_ptr<Card> card = currPlayer->playArea.getTopCard();
-	if (currPlayer->playArea.suitSearch(card.get()->getSuit())) {
-		currPlayer->playArea.addToDeck(std::move(card));
+
+	if (currPlayer->playArea.isBust()) {
 		return false;
 	}
-	currPlayer->playArea.addToDeck(std::move(card));
-	card = currPlayer->playArea.getTopCard();
+
+	std::unique_ptr<Card>card = currPlayer->playArea.getTopCard();
 	this->cardAbilityHelper(card.get());
 	currPlayer->playArea.addToDeck(std::move(card));
+
+	if (currPlayer->playArea.isBust()) {
+		return false;
+	}
+
 	return true;
 }
 
@@ -43,8 +47,8 @@ void Game::cardAbilityHelper(Card* card) {
 	case Card::cannon:
 		card->useAbility(&enemyPlayer->playerBank, &discardPile);
 		break;
-	//case Card::chest:
-	//	card->useAbility(&currPlayer->playerBank, &discardPile);
+	case Card::chest:
+		std::cout << "No immediate effect. If banked with a key, draw as many bonus cards from the Discard pile as you moved into your Bank";
 		break;
 	case Card::key:
 		std::cout << "No immediate effect. If banked with a chest, draw as many bonus cards from the Discard pile as you moved into your Bank";

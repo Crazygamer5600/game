@@ -35,6 +35,8 @@ public:
 
 	int sumHighestPerSuit();
 
+	bool isBust();
+
 	std::vector<Card*> lastPlayed;
 
 private:
