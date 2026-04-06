@@ -1,13 +1,13 @@
 #include "Kraken.h"
 #include <iostream>
 
-void Kraken::useAbility(Deck* playArea, Deck* discardPile) {
+void Kraken::useAbility(Deck* playArea, Deck* drawPile) {
     for (int i = 0; i < 3; i++) {
-        if (discardPile->isEmpty()) {
+        if (drawPile->isEmpty()) {
             std::cout << "No cards left in the discard pile.\n";
             break;
         }
-        discardPile->draw(*playArea);
+        drawPile->draw(*playArea);
     }
 }
 

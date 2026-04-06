@@ -26,6 +26,6 @@ public:
 
 	bool isPlayer1Turn = true;
 
-	void draw();
+	bool draw();
 	void cardAbilityHelper(Card* card);
 };
