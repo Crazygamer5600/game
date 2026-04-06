@@ -38,6 +38,16 @@ int main() {
 	Oracle testOracle(6);
 	testOracle.useAbility(&draw, nullptr);
 
+	Chest testChest(4);
+	testChest.useAbility(&draw, &emptyMove);
+
+	std::cout << "\n";
+	emptyMove.showDeckContents();
+
+	std::cout << "\n";
+	draw.showDeckContents();
+
+
 };
 
 //todo: impliment the chest, map, kraken and their abilities, then implement the game loop and win conditions.

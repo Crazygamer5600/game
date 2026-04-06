@@ -149,3 +149,13 @@ bool Deck::suitSearch(Card::suit suitToFind) {
 	}
 	return false;
 }
+
+std::unique_ptr<Card> Deck::getTopCard() {
+	if (cardSet.empty()) {
+		return nullptr;
+	}
+
+	std::unique_ptr<Card> topCard = std::move(cardSet.front());
+	cardSet.erase(cardSet.begin());
+	return topCard;
+}

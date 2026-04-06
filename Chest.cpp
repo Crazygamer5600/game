@@ -2,15 +2,22 @@
 #include <iostream>
 
 void Chest::useAbility(Deck* myBank, Deck* discardPile) {
-    if (!myBank->suitSearch(Card::key))
-        return;
-
-    // number of cards currently in bank
-    int bonus = myBank->size();
-
-    for (int i = 0; i < bonus; i++) {
-        discardPile->draw(*myBank);
+    bool hasKey = false;
+    for (auto card : myBank->lastPlayed) {
+        if (card->getSuit() == Card::key) {
+            hasKey = true;
+            break; // no need to check further
+        }
     }
+
+    if (!hasKey) {
+        return;
+    }
+
+    for (size_t i = 0; i < myBank->lastPlayed.size(); ++i) {
+        myBank->addToDeck(discardPile->getTopCard());
+    }
+
 }
 
 std::string Chest::toString() {

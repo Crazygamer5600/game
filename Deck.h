@@ -21,6 +21,8 @@ public:
 
 	std::unique_ptr<Card> getHighestCard();
 
+	std::unique_ptr<Card> getTopCard();
+
 	void draw(Deck& depositDeck);
 
 	void moveEntireDeck(Deck& targetDeck);
