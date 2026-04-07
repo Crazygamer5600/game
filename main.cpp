@@ -11,29 +11,63 @@
 #include "Mermaid.h"
 #include "Oracle.h"
 #include "Sword.h"
+#include "Player.h"
+#include "Game.h"
 
 
 int main() {
 	std::cout << GAME_TITLE;
-	Deck bank(0);
-	Deck discardPile(2);
-	Deck playArea(7);
+	int roundNum = 0;
+	int turnNum = 0;
+	bool playAgain = true;
+	Player player1("Sasha");
+	Player player2("Marge");
+	Deck discardPile(0);
+	Deck drawPile(7);
+	drawPile.shuffleDeck();
 
-	playArea.showDeckContents();
-	std::cout << "\n";
+	Game game(std::move(discardPile), std::move(drawPile), std::move(player1), std::move(player2));
 
+	std::cout << "Starting Dead Man's Draw++!" << std::endl;
+	while (playAgain) {
+		roundNum++;
+		while (!game.drawPile.isEmpty())
+		{
+			Player* currPlayer = &game.player1;
+			if (!game.isPlayer1Turn) {
+				currPlayer = &game.player2;
+			}
+			turnNum++;
 
-	playArea.moveEntireDeck(bank);
+			std::cout << "--- Round " << roundNum << ", Turn " << turnNum << "---" << std::endl;
+			std::cout << currPlayer->name + "'s turn." << std::endl;
+			std::cout << currPlayer->name + "'s bank:" << std::endl;
+			std::cout << "| score: " << currPlayer->getScore()<<std::endl;
+			game.draw();
+			char drawAgain = 'y';
+			std::cout << "Draw again? (y/n) ";
+			std::cin >> drawAgain;
+			
+			while (drawAgain == 'y') {
+				if (!game.draw()) {
+					break;
+				}
+				std::cout << "Draw again? (y/n) ";
+				std::cin >> drawAgain;
+			}
+			if (drawAgain == 'n') {
+				game.bank();
+			} else {
+				currPlayer->playArea.moveEntireDeck(game.discardPile);
+			}
 
-	bank.showDeckContents();
-
-	Chest chestCard(5);
-	chestCard.useAbility(&bank, &discardPile);
-
-	std::cout << "\n";
-
-	bank.showDeckContents();
-
+			if (game.isPlayer1Turn == true) {
+				game.isPlayer1Turn = false;
+			}
+			else {
+				game.isPlayer1Turn = true;
+			}
+			
+		}
+	}
 };
-
-//todo: impliment the map, kraken and their abilities, then implement the game loop and win conditions.
