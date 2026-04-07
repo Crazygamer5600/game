@@ -18,18 +18,19 @@
 int main() {
 	std::cout << GAME_TITLE;
 	int roundNum = 0;
-	int turnNum = 0;
-	bool playAgain = true;
-	Player player1("Sasha");
-	Player player2("Marge");
-	Deck discardPile(0);
-	Deck drawPile(7);
-	drawPile.shuffleDeck();
+	char playAgain = 'y';
+	
+	while (playAgain == 'y') {
+		Player player1("Sasha");
+		Player player2("Marge");
+		Deck discardPile(0);
+		Deck drawPile(7);
+		drawPile.shuffleDeck();
+		int turnNum = 0;
+		Game game(std::move(discardPile), std::move(drawPile), std::move(player1), std::move(player2));
 
-	Game game(std::move(discardPile), std::move(drawPile), std::move(player1), std::move(player2));
+		std::cout << "Starting Dead Man's Draw++!" << std::endl;
 
-	std::cout << "Starting Dead Man's Draw++!" << std::endl;
-	while (playAgain) {
 		roundNum++;
 		while (!game.drawPile.isEmpty())
 		{
@@ -42,12 +43,12 @@ int main() {
 			std::cout << "--- Round " << roundNum << ", Turn " << turnNum << "---" << std::endl;
 			std::cout << currPlayer->name + "'s turn." << std::endl;
 			std::cout << currPlayer->name + "'s bank:" << std::endl;
-			std::cout << "| score: " << currPlayer->getScore()<<std::endl;
+			std::cout << "| score: " << currPlayer->getScore() << std::endl;
 			game.draw();
 			char drawAgain = 'y';
 			std::cout << "Draw again? (y/n) ";
 			std::cin >> drawAgain;
-			
+
 			while (drawAgain == 'y') {
 				if (!game.draw()) {
 					break;
@@ -57,7 +58,8 @@ int main() {
 			}
 			if (drawAgain == 'n') {
 				game.bank();
-			} else {
+			}
+			else {
 				currPlayer->playArea.moveEntireDeck(game.discardPile);
 			}
 
@@ -67,7 +69,20 @@ int main() {
 			else {
 				game.isPlayer1Turn = true;
 			}
-			
+
 		}
-	}
-};
+		if (game.player1.getScore() > game.player2.getScore()) {
+			std::cout << game.player1.name + " wins!" << std::endl;
+		}
+		else if (game.player2.getScore() > game.player1.getScore()) {
+			std::cout << game.player2.name + " wins!" << std::endl;
+		}
+		else {
+			std::cout << "It's a tie!" << std::endl;
+		}
+		std::cout << "Play again? (y/n) ";
+		std::cin >> playAgain;
+
+	};
+	return 0;
+}
