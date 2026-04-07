@@ -95,13 +95,14 @@ void Game::cardAbilityHelper(Card* card) {
 		}
 		break;
 	case Card::mermaid:
-		card->useAbility(nullptr, nullptr);
 		break;
 	case Card::kraken:
 		card->useAbility(&currPlayer->playArea, &drawPile);
-		for (int i = 0; i < 3; i++) {
-			if (currPlayer->playArea.cardSet.at(i)->getSuit() != Card::kraken && currPlayer->playArea.cardSet.at(i)->getSuit() != Card::map) {
-				cardAbilityHelper(currPlayer->playArea.cardSet.at(i).get());
+		if (currPlayer->playArea.cardSet.size() >= 3) {
+			for (int i = 0; i < 3; i++) {
+				if (currPlayer->playArea.cardSet.at(i)->getSuit() != Card::kraken && currPlayer->playArea.cardSet.at(i)->getSuit() != Card::map) {
+					cardAbilityHelper(currPlayer->playArea.cardSet.at(i).get());
+				}
 			}
 		}
 		break;
