@@ -195,3 +195,8 @@ bool Deck::isBust() {
 	return false;
 }
 
+std::unique_ptr<Card> Deck::removeCard(int index) {
+	std::unique_ptr<Card> card = std::move(cardSet.at(index));
+	cardSet.erase(cardSet.begin() + index);
+	return card;
+}

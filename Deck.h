@@ -36,6 +36,7 @@ public:
 	int sumHighestPerSuit();
 
 	bool isBust();
+	std::unique_ptr<Card> removeCard(int index);
 
 	std::vector<std::unique_ptr<Card>> getCardSet();
 
