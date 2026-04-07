@@ -37,6 +37,7 @@ public:
 
 	bool isBust();
 	std::unique_ptr<Card> removeCard(int index);
+	Card* getFirstOfSuit(Card::suit suit);
 
 	std::vector<std::unique_ptr<Card>> getCardSet();
 

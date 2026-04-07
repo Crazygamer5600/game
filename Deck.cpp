@@ -200,3 +200,12 @@ std::unique_ptr<Card> Deck::removeCard(int index) {
 	cardSet.erase(cardSet.begin() + index);
 	return card;
 }
+
+Card* Deck::getFirstOfSuit(Card::suit suit) {
+	for (auto& card : cardSet) {
+		if (card->getSuit() == suit) {
+			return card.get();
+		}
+	}
+	return nullptr;
+}

@@ -28,4 +28,6 @@ public:
 
 	bool draw();
 	void cardAbilityHelper(Card* card);
+	void bank();
+	void chestKeyBonus(Player* currPlayer);
 };

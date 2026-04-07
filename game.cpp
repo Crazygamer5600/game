@@ -103,8 +103,24 @@ void Game::cardAbilityHelper(Card* card) {
 			}
 		}
 		break;
-
 	}
-	
 }
 
+void Game::bank() {
+	Player* currPlayer = &player1;
+	if (!isPlayer1Turn) {
+		currPlayer = &player2;
+	}
+
+	if (currPlayer->playArea.suitSearch(Card::key) && currPlayer->playArea.suitSearch(Card::chest)) {
+		chestKeyBonus(currPlayer);
+	}
+
+	currPlayer->playArea.moveEntireDeck(currPlayer->playerBank);
+}
+
+void Game::chestKeyBonus(Player* currPlayer) {
+	auto card = currPlayer->playArea.getFirstOfSuit(Card::chest);
+	currPlayer->playArea.moveEntireDeck(currPlayer->playerBank);
+	card->useAbility(&currPlayer->playerBank, &discardPile);
+}
