@@ -26,6 +26,7 @@ int main() {
 		Deck discardPile(0);
 		Deck drawPile(7);
 		drawPile.shuffleDeck();
+		drawPile.shuffleDeck();
 		int turnNum = 0;
 		Game game(std::move(discardPile), std::move(drawPile), std::move(player1), std::move(player2));
 

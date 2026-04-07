@@ -5,9 +5,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>497</x>
-      <y>112</y>
+      <y>98</y>
       <w>147</w>
-      <h>168</h>
+      <h>182</h>
     </coordinates>
     <panel_attributes>Decks
 --
@@ -23,7 +23,8 @@ moveEntireDeck()
 bool suitSearch()
 void showLastPlayed();
 bool isEmpty() const;
-int sumHighestPerSuit();</panel_attributes>
+int sumHighestPerSuit();
+Bool isBust()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -36,9 +37,15 @@ int sumHighestPerSuit();</panel_attributes>
     </coordinates>
     <panel_attributes>game
 --
-main()
 Decks discard
-Decks draw</panel_attributes>
+Decks draw
+Player player1
+Player player2
+bool isPlayer1Turn
+bool draw()
+void cardAbilityHelper()
+void bank()
+void chestKeyBonus()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -47,7 +54,7 @@ Decks draw</panel_attributes>
       <x>497</x>
       <y>301</y>
       <w>147</w>
-      <h>77</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>_Abstract Class: Card_
 --
@@ -55,7 +62,8 @@ enum suit
 const int: Point_Val
 virtual useAbility()
 toString()
-getSuit()</panel_attributes>
+getSuit()
+getPointVal()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -303,12 +311,12 @@ getSuit()</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>371</y>
+      <y>385</y>
       <w>21</w>
-      <h>77</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -467,7 +475,6 @@ m2=2</panel_attributes>
 --
 Decks PlayerBank
 Decks PlayArea
-Bool isBust()
 getScore()
 </panel_attributes>
     <additional_attributes/>
@@ -502,9 +509,9 @@ GAME_TITLE</panel_attributes>
       <x>560</x>
       <y>49</y>
       <w>196</w>
-      <h>77</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>260.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>260.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
