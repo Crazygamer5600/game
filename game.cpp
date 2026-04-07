@@ -67,9 +67,9 @@ void Game::cardAbilityHelper(Card* card) {
 		card->useAbility(&currPlayer->playArea, &discardPile);
 		if(currPlayer->playArea.cardSet.size() >= 3) {
 			std::cout << "Draw 3 cards from the discard and pick one to add to the play area"<<std::endl;
-			std::cout << "(1)" << currPlayer->playArea.cardSet.at(1).get()->toString() << std::endl;
-			std::cout << "(2)" << currPlayer->playArea.cardSet.at(2).get()->toString() << std::endl;
-			std::cout << "(3)" << currPlayer->playArea.cardSet.at(3).get()->toString() << std::endl;
+			std::cout << "(1)" << currPlayer->playArea.cardSet.at(0).get()->toString() << std::endl;
+			std::cout << "(2)" << currPlayer->playArea.cardSet.at(1).get()->toString() << std::endl;
+			std::cout << "(3)" << currPlayer->playArea.cardSet.at(2).get()->toString() << std::endl;
 			std::cout << "What do you pick? ";
 			int choice;
 			std::cin>>choice;
