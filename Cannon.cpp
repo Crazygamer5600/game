@@ -3,6 +3,7 @@
 
 void Cannon::useAbility(Deck* enemyBank, Deck* discardPile) {
 	discardPile->addToDeck(enemyBank->getHighestCard());
+	//send highest valu card of enemy bank to discard pile
 }
 
 std::string Cannon::toString() {

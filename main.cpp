@@ -58,9 +58,11 @@ int main() {
 				std::cin >> drawAgain;
 			}
 			if (drawAgain == 'n') {
+				//reflect a banked hand in the player's bank and clear the play area
 				game.bank();
 			}
 			else {
+				//reflect a busted hand in the player's bank and clear the play area, then move the cards in play area to the discard pile
 				currPlayer->playArea.moveEntireDeck(game.discardPile);
 			}
 

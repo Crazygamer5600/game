@@ -12,6 +12,7 @@ const std::map<Card::suit, std::string> Card::suitString = { {Card::kraken, "Kra
 	{Card::key, "key"},
 	{Card::chest, "Chest"},
 	{Card::cannon, "Cannon" } 
+	//string map for each suit
 };
 
 std::string Card::toString() {

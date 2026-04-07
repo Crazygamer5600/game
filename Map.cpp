@@ -8,6 +8,7 @@ void Map::useAbility(Deck* playArea, Deck* discardPile) {
             break;
         }
         discardPile->draw(*playArea);
+		//identical to kraken, but with discard pile instead of draw pile
     }
 }
 

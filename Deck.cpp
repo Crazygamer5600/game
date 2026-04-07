@@ -35,8 +35,10 @@ void Deck::makeDeck(int qtyOfEach) {
 	int val;
 	std::unique_ptr<Card> card;
 
-	for (int x = 0; x<9; x++) {
+	for (int x = 0; x < 9; x++) {
+		// repeat for each suit
 		for (int i = 0; i < qtyOfEach; i++) {
+			// repeat for each card of that suit
 			switch (x) {
 				case 0:
 					val = normalVals[i % normalVals.size()];
@@ -68,6 +70,7 @@ void Deck::makeDeck(int qtyOfEach) {
 					break;
 				case 7:
 					val = 2 + normalVals[i % normalVals.size()];
+					//adds 2 to the value of mermaid cards to make them more valueable than the other normal cards
 					card = std::make_unique<Mermaid>(val);
 					break;
 				case 8:
@@ -82,6 +85,7 @@ void Deck::makeDeck(int qtyOfEach) {
 
 void Deck::showDeckContents() {
 	for (auto& card : this->cardSet) {
+		//loop to show the contents of the deck, used for testing
 		std::cout << card->toString() << "\n";
 	}
 }
@@ -89,6 +93,7 @@ void Deck::showDeckContents() {
 void Deck::showWithinRange(int range) {
 	int i = 0;
 	for (auto& card : this->cardSet) {
+		//same as showDeckContents but only shows the first x cards, where x is the range parameter, used for testing and outputting the top cards of the deck
 		if (i >= range) {
 			break;
 		}
@@ -98,6 +103,7 @@ void Deck::showWithinRange(int range) {
 }
 
 void Deck::shuffleDeck() {
+	//uses the built in shuffle algorithm to shuffle the deck, used for shuffling the deck at the start of the game
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(this->cardSet.begin(), this->cardSet.end(), g);
@@ -106,11 +112,12 @@ void Deck::shuffleDeck() {
 std::unique_ptr<Card> Deck::getHighestCard() {
 
 	if (this->cardSet.empty()) {
+		//if the deck is empty, return nullptr
 		return nullptr;
 	}
 
-	size_t highestIndex = 0;
-	for (size_t i = 1; i < cardSet.size(); ++i) {
+	int highestIndex = 0;
+	for (int i = 1; i < cardSet.size(); ++i) {
 		if (cardSet[i]->getPointVal() > cardSet[highestIndex]->getPointVal()) {
 			highestIndex = i;
 		}
@@ -119,6 +126,7 @@ std::unique_ptr<Card> Deck::getHighestCard() {
 	std::unique_ptr<Card> largestCard = std::move(cardSet[highestIndex]);
 	cardSet.erase(cardSet.begin() + highestIndex);
 	return largestCard;
+	//returns the card with the highest point value in the deck
 }
 
 void Deck::draw(Deck& depositDeck) {
@@ -154,6 +162,7 @@ bool Deck::suitSearch(Card::suit suitToFind) {
 }
 
 std::unique_ptr<Card> Deck::getTopCard() {
+	// gets the literal top card of the deck, used for drawing cards and for the oracle card's ability
 	if (cardSet.empty()) {
 		return nullptr;
 	}
@@ -168,6 +177,7 @@ bool Deck::isEmpty() const {
 }
 
 void Deck::showLastPlayed() {
+	//shows a vector of pointers to the last cards deposited into the bank.
 	for (int i = 0; i < lastPlayed.size(); i++) {
 		std::cout << i << ": " << lastPlayed[i]->toString() << "\n";
 	}
@@ -175,18 +185,25 @@ void Deck::showLastPlayed() {
 
 int Deck::sumHighestPerSuit() {
 	std::map<Card::suit, int> highest;
+	// key value pairs of suit and the highest point value of that suit in the deck
 	for (const auto& card : this->cardSet) {
 		if (card->getPointVal() > highest[card->getSuit()])
+			// if the point value of the card is higher than the current highest for that suit, update the highest for that suit
 			highest[card->getSuit()] = card->getPointVal();
+		//overwrite the current highest for that suit with the new highest if the new card is higher
 	}
 	int score = 0;
-	for (const auto& pair : highest) score += pair.second;
+	for (const auto& pair : highest) {
+		score += pair.second;
+	} 
+	//for each suit, add the highest point value of that suit to the score, then return the total score
 	return score;
 }
 
 bool Deck::isBust() {
 	for (int i = 0; i < cardSet.size(); i++) {
 		for (int j = i + 1; j < cardSet.size(); j++) {
+			//nested loop to compare each card in the deck to every other card in the deck, if any two cards have the same suit, return true for bust
 			if (cardSet[i]->getSuit() == cardSet[j]->getSuit()) {
 				return true;
 			}
@@ -202,6 +219,7 @@ std::unique_ptr<Card> Deck::removeCard(int index) {
 }
 
 Card* Deck::getFirstOfSuit(Card::suit suit) {
+	//returns a pointer to the first card of the specified suit in the deck
 	for (auto& card : cardSet) {
 		if (card->getSuit() == suit) {
 			return card.get();

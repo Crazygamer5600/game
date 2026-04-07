@@ -8,6 +8,7 @@ void Kraken::useAbility(Deck* playArea, Deck* drawPile) {
             break;
         }
         drawPile->draw(*playArea);
+		//adds 3 cards to the play area, if the draw pile is not empty. If the draw pile is empty, prints a message and does nothing else.
     }
 }
 
