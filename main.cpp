@@ -56,6 +56,10 @@ int main() {
 				if (!game.draw()) {
 					break;
 				}
+				else if (game.drawPile.isEmpty()) {
+					drawAgain = 'n';
+					break;
+				}
 				std::cout << "Draw again? (y/n) ";
 				std::cin >> drawAgain;
 			}
