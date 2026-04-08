@@ -45,10 +45,12 @@ int main() {
 			std::cout << currPlayer->name + "'s turn." << std::endl;
 			std::cout << currPlayer->name + "'s bank:" << std::endl;
 			std::cout << "| score: " << currPlayer->getScore() << std::endl;
-			game.draw();
-			char drawAgain = 'y';
-			std::cout << "Draw again? (y/n) ";
-			std::cin >> drawAgain;
+
+			char drawAgain = 'n';
+			if (game.draw()) {
+				std::cout << "Draw again? (y/n) ";
+				std::cin >> drawAgain;
+			}
 
 			while (drawAgain == 'y') {
 				if (!game.draw()) {
